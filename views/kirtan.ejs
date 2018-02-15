@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+<div class="container">
+        <header class="jumbotron" style="background-color: rgb(204, 187, 66)">
+                <div class="container">
+                    <h1>Kirtan List </h1>
+                    <p>You can download the kirtan free!<p>
+                            <div>
+                                    <a class="btn btn-primary btn-large" href="/"> Back</a>
+                            </div>         
+                </div>
+            </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% KirtanFile.forEach(function(blog){ %>
+            <div class="col-md-4 col-sm-6">
+                    <div class="thumbnail" style="background: rgb(204, 187, 66);">
+                        <h2><%= blog.title%></h2>
+                         <img src="<%=blog.image %>">
+                         <div style="margin-top: 4px;">
+                                <audio controls="controls" style="background: rgb(204, 187, 66)">
+                                    <source src="<%=blog.mp3Link %>" type="audio/mpeg"/>
+                                </audio>
+                         </div>
+                    </div>
+            </div>
+                    <% }) %>
+        </div>
+        
+    <div>
+
+
+
+
+	
+
+
+<% include ./partials/footer %>
